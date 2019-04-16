@@ -97,4 +97,4 @@ python run_classifier_new.py \
 Note that the model files are defined in bertclassifier_new.py. Besides the attention model, we include 4 other experimental model options: "1hid": introduce an additional single hidden-layer MLP on top of [CLS] hidden state, "2hid": introduce 2 hidden-layers MLP, "noparam": does not introduce any new parameters, "full": use residual connections from all [CLS] intermediate hidden states. 
 
 
-6. To fine-tune BERT with adversarial training,
+6. To fine-tune BERT with adversarial training, please refer to the folder /bert_adv.
