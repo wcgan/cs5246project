@@ -1,4 +1,4 @@
-# python3.5 build_sc.py <pretrained_vectors_gzipped_file_absolute_path> <train_text_path> <train_label_path> <model_file_path>
+# python cnn.py train
 # reference: https://github.com/Shawn1993/cnn-text-classification-pytorch
 
 import os
@@ -132,13 +132,13 @@ if __name__ == "__main__":
     label = data.Field(
                     sequential=False, use_vocab=False)
     train = data.TabularDataset(
-                            path='rt-polarity.train', format='tsv',skip_header=True,
+                            path='data/rt-polarity.train', format='tsv',skip_header=True,
                             fields=[('sentence', comment), ('label', label)])
     dev = data.TabularDataset(
-                            path='rt-polarity.dev', format='tsv',skip_header=True,
+                            path='data/rt-polarity.dev', format='tsv',skip_header=True,
                             fields=[('sentence', comment), ('label', label)])
     test = data.TabularDataset(
-                            path='rt-polarity.test', format='tsv',skip_header=True,
+                            path='data/rt-polarity.test', format='tsv',skip_header=True,
                             fields=[('sentence', comment), ('label', label)])
     comment.build_vocab(train, vectors="glove.6B.300d")
 
