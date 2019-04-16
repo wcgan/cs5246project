@@ -20,6 +20,15 @@ python run_rnn.py Data/rt-polarity/test.tsv RNN_Output/model_file
 
 2. To obtain results for the CNN model,
 
+First ensure that you are using a python3.6 environment with PyTorch 0.4.1, torchtext 0.4.0 and spacy installed.
+
+Train the model by running:
+
+python cnn.py train
+
+then, obtain the testing accuracy with:
+
+python cnn.py test
 
 3. To obtain results for the bmLSTM model,
 
