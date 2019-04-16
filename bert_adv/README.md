@@ -3,9 +3,16 @@
 This repo combines bert: https://github.com/google-research/bert,
 with text adversarial: https://github.com/tensorflow/models/tree/master/research/adversarial_text.
 
+data_dir should contain the tab seperated files:
+```
+- data
+   |_ train.tsv
+   |_ test.tsv
+   |_ dev.tsv
+```
+
 Follow the original Bert instruction for downloading pretrained uncased_L-12_H-768_A-12.
 Then for classification, run the following:
-
 ```
 export BERT_BASE_DIR=/path/to/project/bert/uncased_L-12_H-768_A-12
 python run_classifier.py \
@@ -24,6 +31,5 @@ python run_classifier.py \
   --train_batch_size=8\
   --adv_training_method=rp
 ```
-Data dir should contain the tab seperated files.
 This repo supports rp and at for adv_training_method option.
 
