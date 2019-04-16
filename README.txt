@@ -2,6 +2,7 @@ This README file contains instructions to reproduce the results in our CS5246 Pr
 
 The dataset used for performance comparison between models are in the folder /data, with 3 files: rt-polarity.train, rt-polarity.dev, rt-polarity.test
 
+
 1. To obtain results for the RNN model, 
 
 First ensure that you are using a python3.6 environment with PyTorch 0.4.1 installed.
@@ -18,6 +19,7 @@ Then, obtain the testing accuracy with:
 
 python run_rnn.py Data/rt-polarity/test.tsv RNN_Output/model_file
 
+
 2. To obtain results for the CNN model,
 
 First ensure that you are using a python3.6 environment with PyTorch 0.4.1, torchtext 0.4.0 and spacy installed.
@@ -30,6 +32,7 @@ then, obtain the testing accuracy with:
 
 python cnn.py test
 
+
 3. To obtain results for the bmLSTM model,
 
 First ensure that you are using a python3.6 environment with PyTorch 0.4.1 installed.
@@ -39,6 +42,7 @@ The pretrained model is accessible in: https://github.com/openai/generating-revi
 Train the model by running:
 
 python run_bmLSTM.py
+
 
 4. To obtain results for the original BERT model,
 
@@ -66,6 +70,7 @@ python run_classifier_new.py \
   --eval_batch_size 1 \
   --model base \
 
+
 5. To fine-tune BERT with the attention approach, ensure the dependencies in 4) are installed.
 
 Then, simply run
@@ -88,5 +93,8 @@ python run_classifier_new.py \
   --eval_batch_size 1 \
   --model attention \
   --seed 5246 \
+
+Note that the model files are defined in bertclassifier_new.py. Besides the attention model, we include 4 other experimental model options: "1hid": introduce an additional single hidden-layer MLP on top of [CLS] hidden state, "2hid": introduce 2 hidden-layers MLP, "noparam": does not introduce any new parameters, "full": use residual connections from all [CLS] intermediate hidden states. 
+
 
 6. To fine-tune BERT with adversarial training,
