@@ -32,6 +32,13 @@ python cnn.py test
 
 3. To obtain results for the bmLSTM model,
 
+First ensure that you are using a python3.6 environment with PyTorch 0.4.1 installed.
+
+The pretrained model is accessible [here](https://github.com/openai/generating-reviews-discovering-sentiment/tree/master/data).
+
+Train the model by running:
+
+python run_bmLSTM.py
 
 4. To obtain results for the original BERT model,
 
